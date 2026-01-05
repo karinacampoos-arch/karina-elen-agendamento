@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Karina Campos & Elen Amorim – Cílios, Maquiagem & Cabelo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  font-size:14px;
+  background:linear-gradient(to bottom,#fdecef,#ffffff);
+  color:#000;
+}
+.container{
+  max-width:420px;
+  margin:auto;
+  background:#fff;
+  min-height:100vh;
+  padding:20px;
+}
+h1{
+  text-align:center;
+  font-size:18px;
+  margin-bottom:20px;
+}
+.card{
+  background:#fff;
+  border-radius:12px;
+  padding:15px;
+  margin-bottom:15px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+.card h2{
+  font-size:16px;
+  margin-bottom:10px;
+  border-bottom:1px solid #f2c6cf;
+  padding-bottom:5px;
+}
+.item{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:8px;
+}
+input[type=number]{width:60px;}
+input[type=text], input[type=date], input[type=time]{
+  width:100%;
+  padding:6px;
+}
+.radio{
+  margin-bottom:6px;
+}
+.btn{
+  display:block;
+  width:100%;
+  padding:12px;
+  background:#f2a9b6;
+  color:#000;
+  border:none;
+  border-radius:10px;
+  font-weight:bold;
+}
+.btn:disabled{opacity:0.5;}
+.aviso{
+  font-size:12px;
+  margin-top:8px;
+  color:#555;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h1>Karina Campos & Elen Amorim<br>Cílios, Maquiagem & Cabelo</h1>
+
+<!-- CÍLIOS -->
+<div class="card">
+<h2>👁️Extensão de Cílios</h2>
+
+<div class="item"><span>Volume Básico (R$145)</span>
+<input type="number" min="0" value="0" class="servico" data-nome="Volume Básico" data-valor="145"></div>
+
+<div class="item"><span>Manutenção Volume Básico (R$85)</span>
+<input type="number" min="0" value="0" class="servico" data-nome="Manutenção Volume Básico" data-valor="85"></div>
+
+<div class="item"><span>Efeito Rímel (R$120)</span>
+<input type="number" min="0" value="0" class="servico" data-nome="Efeito Rímel" data-valor="120"></div>
+
+<div class="item"><span>Cílios Fox (R$120)</span>
+<input type="number" min="0" value="0" class="servico" data-nome="Cílios Fox" data-valor="120"></div>
+
+<div class="item"><span>Manutenção Rímel/Fox (R$75)</span>
+<input type="number" min="0" value="0" class="servico" data-nome="Manutenção Rímel/Fox" data-valor="75"></div>
+</div>
+
+<!-- MAQUIAGEM -->
+<div class="card">
+<h2>💄 Maquiagem</h2>
+
+<div class="item"><span>Maquiagem Simples (R$120)</span>
+<input type="number" min="0" value="0" class="servico" data-nome="Maquiagem Simples" data-valor="120"></div>
+
+<div class="item"><span>Maquiagem Elaborada (R$145)</span>
+<input type="number" min="0" value="0" class="servico" data-nome="Maquiagem Elaborada" data-valor="145"></div>
+</div>
+
+<!-- CABELO -->
+<div class="card">
+<h2>💇‍♀️ Cabelo</h2>
+
+<div class="item"><span>Babyliss (R$60)</span>
+<input type="number" min="0" value="0" class="servico" data-nome="Babyliss" data-valor="60"></div>
+
+<div class="item"><span>Babyliss Cacheada (R$70)</span>
+<input type="number" min="0" value="0" class="servico" data-nome="Babyliss Cacheada" data-valor="70"></div>
+
+<div class="item"><span>Escova (R$75)</span>
+<input type="number" min="0" value="0" class="servico" data-nome="Escova" data-valor="75"></div>
+
+<div class="item"><span>Escova + Babyliss (R$100)</span>
+<input type="number" min="0" value="0" class="servico" data-nome="Escova + Babyliss" data-valor="100"></div>
+
+<div class="item"><span>Penteado Semi-preso (R$195)</span>
+<input type="number" min="0" value="0" class="servico" data-nome="Penteado Semi-preso" data-valor="195"></div>
+
+<div class="item"><span>Penteado Preso (R$210)</span>
+<input type="number" min="0" value="0" class="servico" data-nome="Penteado Preso" data-valor="210"></div>
+
+<div class="item"><span>Penteado Infantil (R$150)</span>
+<input type="number" min="0" value="0" class="servico" data-nome="Penteado Infantil" data-valor="150"></div>
+</div>
+
+<!-- AGENDAMENTO -->
+<div class="card">
+<h2>📅 Agendamento</h2>
+
+<strong>Digite seu nome</strong><br>
+<input type="text" id="nomeCliente" placeholder="Digite seu nome"><br><br>
+
+<strong>Escolha com quem deseja falar</strong><br>
+<div class="radio">
+<label><input type="radio" name="whats" value="5511964568408"> Karina – Cílios & Maquiagem</label>
+</div>
+<div class="radio">
+<label><input type="radio" name="whats" value="5511918630651"> Elen – Cabelo</label>
+</div><br>
+
+<strong>Data</strong><br>
+<input type="date" id="data"><br><br>
+
+<strong>Agendamento no whats (09:00 às 18:00)</strong><br>
+<input type="time" id="hora" min="09:00" max="18:00" onchange="verificarHorario()"><br>
+<small id="statusHorario"></small>
+
+<h3>Total: R$ <span id="total">0</span>,00</h3>
+
+<button class="btn" id="btnWhats" onclick="enviarWhats()">
+📲 Agendar pelo WhatsApp
+</button>
+
+<p class="aviso">
+⚠️ O horário será confirmado após análise da agenda.
+</p>
+</div>
+
+</div>
+
+<script>
+const servicos=document.querySelectorAll('.servico');
+const totalSpan=document.getElementById('total');
+const statusHorario=document.getElementById('statusHorario');
+const btnWhats=document.getElementById('btnWhats');
+
+const diasBloqueados=[0]; // domingo
+const horariosOcupados=["10:00","14:00","16:30"];
+
+servicos.forEach(s=>s.addEventListener('input',calcularTotal));
+
+function calcularTotal(){
+  let total=0;
+  servicos.forEach(s=>{ total+=s.value*s.dataset.valor; });
+  totalSpan.innerText=total;
+}
+
+document.getElementById('data').addEventListener('change',()=>{
+  const d=new Date(document.getElementById('data').value);
+  if(diasBloqueados.includes(d.getDay())){
+    alert("Este dia não está disponível.");
+    document.getElementById('data').value="";
+  }
+});
+
+function verificarHorario(){
+  const hora=document.getElementById('hora').value;
+  if(horariosOcupados.includes(hora)){
+    statusHorario.innerText="❌ Horário indisponível";
+    statusHorario.style.color="red";
+    btnWhats.disabled=true;
+  }else{
+    statusHorario.innerText="✅ Horário disponível";
+    statusHorario.style.color="green";
+    btnWhats.disabled=false;
+  }
+}
+
+function enviarWhats(){
+  const nome=document.getElementById('nomeCliente').value.trim();
+  const data=document.getElementById('data').value;
+  const hora=document.getElementById('hora').value;
+  const whatsEscolhido=document.querySelector('input[name="whats"]:checked');
+
+  let lista=[];
+  servicos.forEach(s=>{
+    if(s.value>0) lista.push(`${s.value}x ${s.dataset.nome}`);
+  });
+
+  if(!nome || !whatsEscolhido || lista.length===0 || !data || !hora){
+    alert("Preencha nome, escolha o WhatsApp, serviços, data e horário.");
+    return;
+  }
+
+  const msg=
+`Olá! Meu nome é ${nome} 😊
+
+Gostaria de agendar um atendimento.
+
+Serviços: ${lista.join(', ')}
+Data: ${data}
+Horário: ${hora}
+Total: R$ ${totalSpan.innerText},00
+
+Aguardando confirmação da agenda.`;
+
+  window.open(
+    "https://wa.me/"+whatsEscolhido.value+"?text="+encodeURIComponent(msg),
+    "_blank"
+  );
+}
+</script>
+
+</body>
+</html>
